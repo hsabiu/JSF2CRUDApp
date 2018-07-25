@@ -16,7 +16,7 @@
 <meta name="author" content="" />
 <link rel="icon" href="https://v4-alpha.getbootstrap.com/favicon.ico" />
 
-<title>Peple-Ware Recruiting</title>
+<title>People-Ware Recruiting</title>
 <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/"> -->
 <!-- Bootstrap core CSS -->
 <!-- Latest compiled and minified CSS -->
@@ -89,71 +89,72 @@
 					</div>
 
 					<div class="modal-body">
-						<form>
+						<h:form id="newApplicant" enctype="multipart/form-data">
 
 							<div class="form-row">
 								<div class="form-group col-md-6">
-									<label for="inputFirstName">First Name</label> 
-									<input class="form-control" id="inputFirstName" type="text" />
+									<h:outputLabel for="inputFirstName" value="First Name" /> 
+									<h:inputText class="form-control" id="inputFirstName" type="text" value="#{applicantinfo.firstName}" />
 								</div>
 
 								<div class="form-group col-md-6">
-									<label for="inputLastName">Last Name</label> 
-									<input class="form-control" id="inputLastName" type="text" />
+									<h:outputLabel for="inputLastName" value="Last Name" /> 
+									<h:inputText class="form-control" id="inputLastName" type="text" value="#{applicantinfo.lastName}" />
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label for="inputEmail">Email</label> 
-								<input class="form-control" id="inputEmail" type="email" />
+								<h:outputLabel for="inputEmail" value="Email" /> 
+								<h:inputText class="form-control" id="inputEmail" type="email" value="#{applicantinfo.emailAddress}"/>
 							</div>
 
 							<div class="form-group">
-								<label for="inputPhoneNumber">Contact Number</label> 
-								<input class="form-control" data-format="+1 (ddd) ddd-dddd" id="inputPhoneNumber" type="text" />
+								<h:outputLabel for="inputPhoneNumber" value="Contact Number" /> 
+								<h:inputText class="form-control" data-format="+1 (ddd) ddd-dddd" id="inputPhoneNumber" type="text" value="#{applicantinfo.contactNumber}"/>
 							</div>
  
                             <div class="form-row">
                             
 								<div class="form-group col-md-6">
-									<label for="inputSalary">Minimum Salary</label> 
-									<input class="form-control" id="inputSalary" type="text" />
+									<h:outputLabel for="inputSalary" value="Minimum Salary" /> 
+									<h:inputText class="form-control" id="inputSalary" type="text" value="#{applicantinfo.minimumSalary}" />
 								</div>
 								
 								<div class="form-group col-md-6">
-									<label for="inputWorkingTime">Working Time</label> 
-								    <select id="inputWorkingTime" class="form-control">
-								        <option selected="selected">Full-time</option>
-								        <option>Part-time</option>
-								        <option>Both</option>
-									</select>
-								</div>
+									<h:outputLabel for="inputWorkingTime" value="Working Time" /> 
+									   <h:selectOneMenu class="form-control" id="inputWorkingTime" type="text" value="#{applicantinfo.workingTime}">
+									       <f:selectItem selected="selected" itemValue="Full-time" itemLabel="Full-time" />
+									       <f:selectItem itemValue="Part-time" itemLabel="Part-time" />
+									       <f:selectItem itemValue="Both" itemLabel="Both" />
+									</h:selectOneMenu>
+								</div>								
 														
 							</div>
 
 							<div class="form-group">
-								<label for="inputDegree">Academic Degree</label> 
-								<input class="form-control" id="inputDegree" type="text" />
+								<h:outputLabel for="inputDegree" value="Academic Degree" /> 
+								<h:inputText class="form-control" id="inputDegree" type="text" value="#{applicantinfo.academicDegree}" />
 							</div>
-
+								
 							<div class="form-group">
-								<label for="inputSkills">Technical Skills</label> 
-								<input class="form-control" id="inputSkills" type="text" />
+								<h:outputLabel for="inputSkills" value="Technical Skills" /> 
+								<h:inputText class="form-control" id="inputSkills" type="text" value="#{applicantinfo.technicalSkills}" />
+							</div>
+							
+							<div class="btn-toolbar float-right">
+							    <h:commandButton id="submit" value="Submit" class="btn btn-primary" action="#{applicantinfo.addNewApplicant}" />
+							    &nbsp;&nbsp;&nbsp;
+								<h:commandButton id="cancel" value="Cancel" class="btn btn-primary" action="applicants" />
 							</div>
 														
-						</form>
-					</div>
-
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary">Submit</button>
+						</h:form>
 					</div>
 				</div>
 			</div>
 		</div>
 		
 		<footer class="footer">
-
-		<p>© PEOPLE-WARE 2018</p>
+			<p>© PEOPLE-WARE 2018</p>
 		</footer>
 	</div>
 	<!-- /container -->

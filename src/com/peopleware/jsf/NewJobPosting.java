@@ -5,7 +5,7 @@ import javax.faces.bean.SessionScoped;
 
 
 @SessionScoped
-@ManagedBean(name="job", eager=true)
+@ManagedBean(name="jobprofile", eager=true)
 @SuppressWarnings("deprecation")
 public class NewJobPosting {
 	
@@ -26,7 +26,7 @@ public class NewJobPosting {
 		
 	}
 
-	public String add() {
+	public String addNewJobPosting() {
 		
 		System.out.println(employer);
 		System.out.println(contactNo);
@@ -36,7 +36,7 @@ public class NewJobPosting {
 		System.out.println(workingTime);
 		System.out.println(requirements);
 
-		return "emploers.xhtml?faces-redirect=true";
+		return "employers.xhtml?faces-redirect=true";
 	}
 	
 	/*

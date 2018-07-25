@@ -16,7 +16,7 @@
 <meta name="author" content="" />
 <link rel="icon" href="https://v4-alpha.getbootstrap.com/favicon.ico" />
 
-<title>Peple-Ware Recruiting</title>
+<title>People-Ware Recruiting</title>
 <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/"> -->
 <!-- Bootstrap core CSS -->
 <!-- Latest compiled and minified CSS -->
@@ -92,34 +92,34 @@
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<h:outputLabel for="inputEmployerName" value="Employer Name" /> 
-									<h:inputText class="form-control" id="inputEmployerName" type="text" value="#{job.employer}" />
+									<h:inputText class="form-control" id="inputEmployerName" type="text" value="#{jobprofile.employer}" />
 								</div>
 								
 								<div class="form-group col-md-6">
 									<h:outputLabel for="inputPhoneNumber" value="Contact Number" /> 
-									<h:inputText class="form-control" data-format="+1 (ddd) ddd-dddd" id="inputPhoneNumber" type="text" value="#{job.contactNo}" />
+									<h:inputText class="form-control" data-format="+1 (ddd) ddd-dddd" id="inputPhoneNumber" type="text" value="#{jobprofile.contactNo}" />
 								</div>
 							</div>
 
 							<div class="form-group">
 								<h:outputLabel for="inputJobTitle" value="Job Title" /> 
-								<h:inputText class="form-control" id="inputJobTitle" type="text" value="#{job.jobTitle}"/>
+								<h:inputText class="form-control" id="inputJobTitle" type="text" value="#{jobprofile.jobTitle}"/>
 							</div>
 
 							<div class="form-group">
 								<h:outputLabel for="inputPhoneNumber" value="Job Description" /> 
-								<h:inputTextarea class="form-control" id="inputSalary" value="#{job.jobDescription}" />
+								<h:inputTextarea class="form-control" id="inputSalary" value="#{jobprofile.jobDescription}" />
 							</div>
  
                             <div class="form-row">
 								<div class="form-group col-md-6">
 									<h:outputLabel for="inputSalaryRange" value="Salary Range" /> 
-									<h:inputText class="form-control" id="inputSalaryRange" type="text" value="#{job.salaryRange}" />
+									<h:inputText class="form-control" id="inputSalaryRange" type="text" value="#{jobprofile.salaryRange}" />
 								</div>
 								
 								<div class="form-group col-md-6">
 									<h:outputLabel for="inputWorkingTime" value="Working Time" /> 
-								    <h:selectOneMenu class="form-control" id="inputWorkingTime" type="text" value="#{job.requirements}">
+								    <h:selectOneMenu class="form-control" id="inputWorkingTime" type="text" value="#{jobprofile.requirements}">
 								        <f:selectItem selected="selected" itemValue="Full-time" itemLabel="Full-time" />
 								        <f:selectItem itemValue="Part-time" itemLabel="Part-time" />
 									</h:selectOneMenu>
@@ -129,11 +129,11 @@
 
 							<div class="form-group">
 								<h:outputLabel for="inputSkills" value="Requirements" /> 
-								<h:inputText class="form-control" id="inputSkills" type="text" value="#{job.workingTime}" />
+								<h:inputText class="form-control" id="inputSkills" type="text" value="#{jobprofile.workingTime}" />
 							</div>
 							
 							<div class="btn-toolbar float-right">
-							    <h:commandButton id="submit" value="Submit" class="btn btn-primary" action="#{job.add}" />
+							    <h:commandButton id="submit" value="Submit" class="btn btn-primary" action="#{jobprofile.addNewJobPosting}" />
 							    &nbsp;&nbsp;&nbsp;
 								<h:commandButton id="cancel" value="Cancel" class="btn btn-primary" action="employers" />
 							</div>
