@@ -39,6 +39,47 @@
 			<h1 class="headline">Add A New Employee</h1>
 		</div>
 		<!-- container tagline -->
+
+		<div class="container">
+			<h:form id="form" enctype="multipart/form-data">
+				<h:panelGroup>
+					<h:outputLabel for="firstName" value="First Name" />
+					<h:inputText id="firstName" value="#{team.employee.firstName}" />
+				</h:panelGroup>
+				<br />
+				<h:panelGroup>
+					<h:outputLabel for="lastName" value="Last Name" />
+					<h:inputText id="lastName" value="#{team.employee.lastName}" />
+				</h:panelGroup>
+				<br />
+				<h:panelGroup>
+					<h:outputLabel for="degree" value="Degree" />
+					<h:inputText id="degree" value="#{team.employee.degree}" />
+				</h:panelGroup>
+				<br />
+				<h:panelGroup>
+					<h:outputLabel for="title" value="Title" />
+					<h:inputText id="title" value="#{team.employee.title}" />
+				</h:panelGroup>
+				<br />
+				<h:panelGroup>
+					<h:outputLabel for="description" value="Description" />
+					<h:inputTextarea id="description"
+						value="#{team.employee.description}" />
+				</h:panelGroup>
+				<br />
+				<h:panelGroup>
+					<h:outputLabel for="photo" value="Photo" />
+				</h:panelGroup>
+				<br />
+				<br />
+				<h:commandLink id="add" value="Add" action="#{team.add}" />
+				<h:link id="cancel" value="Cancel Add" outcome="dashboard" />
+
+			</h:form>
+
+		</div>
+
 	</section>
 
 

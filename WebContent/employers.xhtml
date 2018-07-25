@@ -87,58 +87,58 @@
 					</div>
 
 					<div class="modal-body">
-						<form>
+						<h:form id="newJobProfile" enctype="multipart/form-data">
 
 							<div class="form-row">
 								<div class="form-group col-md-6">
-									<label for="inputEmployerName">Employer Name</label> 
-									<input class="form-control" id="inputEmployerName" type="text" />
-								</div>
-
-								<div class="form-group col-md-6">
-									<label for="inputPhoneNumber">Contact Number</label> 
-									<input class="form-control" data-format="+1 (ddd) ddd-dddd" id="inputPhoneNumber" type="text" />
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="inputJobTitle">Job Title</label> 
-								<input class="form-control" id="inputJobTitle" type="text" />
-							</div>
-
-							<div class="form-group">
-								<label for="inputPhoneNumber">Job Description</label> 
-								<textarea class="form-control" id="inputSalary"></textarea>
-							</div>
- 
-                            <div class="form-row">
-                            
-								<div class="form-group col-md-6">
-									<label for="inputSalary">Salary Range</label> 
-									<input class="form-control" id="inputSalary" type="text" />
+									<h:outputLabel for="inputEmployerName" value="Employer Name" /> 
+									<h:inputText class="form-control" id="inputEmployerName" type="text" value="#{job.employer}" />
 								</div>
 								
 								<div class="form-group col-md-6">
-									<label for="inputWorkingTime">Working Time</label> 
-								    <select id="inputWorkingTime" class="form-control">
-								        <option selected="selected">Full-time</option>
-								        <option>Part-time</option>
-									</select>
+									<h:outputLabel for="inputPhoneNumber" value="Contact Number" /> 
+									<h:inputText class="form-control" data-format="+1 (ddd) ddd-dddd" id="inputPhoneNumber" type="text" value="#{job.contactNo}" />
 								</div>
-														
+							</div>
+
+							<div class="form-group">
+								<h:outputLabel for="inputJobTitle" value="Job Title" /> 
+								<h:inputText class="form-control" id="inputJobTitle" type="text" value="#{job.jobTitle}"/>
+							</div>
+
+							<div class="form-group">
+								<h:outputLabel for="inputPhoneNumber" value="Job Description" /> 
+								<h:inputTextarea class="form-control" id="inputSalary" value="#{job.jobDescription}" />
+							</div>
+ 
+                            <div class="form-row">
+								<div class="form-group col-md-6">
+									<h:outputLabel for="inputSalaryRange" value="Salary Range" /> 
+									<h:inputText class="form-control" id="inputSalaryRange" type="text" value="#{job.salaryRange}" />
+								</div>
+								
+								<div class="form-group col-md-6">
+									<h:outputLabel for="inputWorkingTime" value="Working Time" /> 
+								    <h:selectOneMenu class="form-control" id="inputWorkingTime" type="text" value="#{job.requirements}">
+								        <f:selectItem selected="selected" itemValue="Full-time" itemLabel="Full-time" />
+								        <f:selectItem itemValue="Part-time" itemLabel="Part-time" />
+									</h:selectOneMenu>
+								</div>
 							</div>
 
 
 							<div class="form-group">
-								<label for="inputSkills">Requirements</label> 
-								<input class="form-control" id="inputSkills" type="text" />
+								<h:outputLabel for="inputSkills" value="Requirements" /> 
+								<h:inputText class="form-control" id="inputSkills" type="text" value="#{job.workingTime}" />
 							</div>
-														
-						</form>
-					</div>
-
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary">Submit</button>
+							
+							<div class="btn-toolbar float-right">
+							    <h:commandButton id="submit" value="Submit" class="btn btn-primary" action="#{job.add}" />
+							    &nbsp;&nbsp;&nbsp;
+								<h:commandButton id="cancel" value="Cancel" class="btn btn-primary" action="employers" />
+							</div>
+										
+						</h:form>
 					</div>
 				</div>
 			</div>
