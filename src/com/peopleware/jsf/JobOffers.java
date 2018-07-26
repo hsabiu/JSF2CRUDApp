@@ -206,10 +206,13 @@ public class JobOffers implements Serializable {
 		Map<Integer, Applicant> sortedScoreTreeMap = new TreeMap(Collections.reverseOrder());
 		sortedScoreTreeMap.putAll(scoreMap);
 
+		int rankCounter = 0;
+		
 		for (Map.Entry<Integer, Applicant> entry : sortedScoreTreeMap.entrySet()) {
 			@SuppressWarnings("unused")
 			Integer key = entry.getKey();
 			Applicant applicant = entry.getValue();
+			applicant.setRank(++rankCounter);
 
 			rankedApplicantsList.add(applicant);
 		}

@@ -11,6 +11,7 @@ public class Applicant {
 	private String degreeLevel;
 	private String specialization;
 	private String skill;
+	private int rank;
 	private int score;
 
 
@@ -113,6 +114,16 @@ public class Applicant {
 	public void setSkill(String skill) {
 		this.skill = skill;
 	}
+	
+	public int getRank() {
+		return rank;
+	}
+
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
 
 	public int getScore() {
 		return score;
