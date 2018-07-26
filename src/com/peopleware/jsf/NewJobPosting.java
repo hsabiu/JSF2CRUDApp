@@ -1,8 +1,8 @@
 package com.peopleware.jsf;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -29,13 +29,33 @@ public class NewJobPosting {
 
 	public String addNewJobPosting() {
 		
-		System.out.println(employer);
-		System.out.println(contactNo);
-		System.out.println(jobTitle);
-		System.out.println(jobDescription);
-		System.out.println(salaryRange);
-		System.out.println(workingTime);
-		System.out.println(requirements);
+		DBManager db = new DBManager();
+		Connection conn = db.getConnection();
+		
+		try {
+			String query = "INSERT INTO jobposts " 
+			             + "(employer_name, contact_number, job_title, job_description, salary_range, working_time, skills) "
+					     + "values (?, ?, ?, ?, ?, ?, ?)";
+			
+		    PreparedStatement stm = conn.prepareStatement(query);
+		    stm.setString(1, employer);
+		    stm.setString(2, contactNo);
+		    stm.setString(3, jobTitle);
+		    stm.setString(4, jobDescription);
+		    stm.setString(5, salaryRange);
+		    stm.setString(6, workingTime);
+		    stm.setString(7, requirements);
+		    
+		    stm.executeUpdate();
+		    stm.close();
+		    conn.close();
+		    
+			System.out.println("Update successful");
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+			
 		
 		employer = null;
 		contactNo = null;

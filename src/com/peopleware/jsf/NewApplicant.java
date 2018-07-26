@@ -19,7 +19,7 @@ public class NewApplicant {
 	private String contactNumber;
 	private String minimumSalary;
 	private String workingTime;
-	private String educationLevel;
+	private String degreeLevel;
 	private String specialization;
 	private String technicalSkills;
 	
@@ -30,7 +30,7 @@ public class NewApplicant {
 		
 		try {
 			String query = "INSERT INTO candidates " 
-			             + "(firstname, lastname, email, phone_number, min_salary, working_time, education_level, specialization, skills) "
+			             + "(firstname, lastname, email, phone_number, min_salary, working_time, degree_level, specialization, skills) "
 					     + "values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			
 		    PreparedStatement stm = conn.prepareStatement(query);
@@ -40,7 +40,7 @@ public class NewApplicant {
 		    stm.setString(4, contactNumber);
 		    stm.setString(5, minimumSalary);
 		    stm.setString(6, workingTime);
-		    stm.setString(7, educationLevel);
+		    stm.setString(7, degreeLevel);
 		    stm.setString(8, specialization);
 		    stm.setString(9, technicalSkills);
 		    
@@ -60,7 +60,7 @@ public class NewApplicant {
 		contactNumber = null;
 		minimumSalary = null;
 		workingTime = null;
-		educationLevel = null;
+		degreeLevel = null;
 		specialization = null;
 		technicalSkills = null;
 		
@@ -119,12 +119,12 @@ public class NewApplicant {
 		this.workingTime = workingTime;
 	}
 
-	public String getEducationLevel() {
-		return educationLevel;
+	public String getDegreeLevel() {
+		return degreeLevel;
 	}
 
-	public void setEducationLevel(String educationLevel) {
-		this.educationLevel = educationLevel;
+	public void setDegreeLevel(String degreeLevel) {
+		this.degreeLevel = degreeLevel;
 	}
 
 	public String getSpecialization() {
