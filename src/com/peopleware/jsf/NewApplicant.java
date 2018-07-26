@@ -29,7 +29,7 @@ public class NewApplicant {
 		Connection conn = db.getConnection();
 		
 		try {
-			String query = "INSERT INTO candidates " 
+			String query = "INSERT INTO applicants " 
 			             + "(firstname, lastname, email, phone_number, min_salary, working_time, degree_level, specialization, skills) "
 					     + "values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			

@@ -9,7 +9,7 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 @ManagedBean(name="jobprofile", eager=true)
 @SuppressWarnings("deprecation")
-public class NewJobPosting {
+public class NewJob {
 	
 	private String employer;
 	private String contactNo;
@@ -23,7 +23,7 @@ public class NewJobPosting {
 	/*
 	 * Constructor
 	 */
-	public NewJobPosting() {
+	public NewJob() {
 		
 	}
 

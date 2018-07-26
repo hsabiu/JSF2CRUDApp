@@ -46,39 +46,33 @@
 
 	<div class="container">
 
-		<p class="lead">Qualified candidates</p>
+		<p class="lead">Qualified applicants</p>
 
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th scope="col">Rank</th>
-					<th scope="col">First Name</th>
-					<th scope="col">Last Name</th>
-					<th scope="col">Total Score</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th scope="row">1</th>
-					<td>Habib</td>
-					<td>Sabiu</td>
-					<td>12</td>
-				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td>Heather</td>
-					<td>John</td>
-					<td>8</td>
-				</tr>
-				<tr>
-					<th scope="row">3</th>
-					<td>Larry</td>
-					<td>James</td>
-					<td>5</td>
-				</tr>
-			</tbody>
-		</table>
+		<h:dataTable class="table table-striped" var="applicant"
+			value="#{joboffers.rankedApplicantsList}">
 
+			<!--  Candidates record -->
+			<h:column>
+				<f:facet name="header">Rank</f:facet>
+				<h:outputText value="1" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">First Name</f:facet>
+				<h:outputText value="#{applicant.firstname}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Last Name</f:facet>
+				<h:outputText value="#{applicant.lastname}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Total Score</f:facet>
+				<h:outputText value="12" />
+			</h:column>
+
+		</h:dataTable>
 
 		<footer class="footer">
 
