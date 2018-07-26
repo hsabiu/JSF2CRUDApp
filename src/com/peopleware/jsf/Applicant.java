@@ -6,12 +6,13 @@ public class Applicant {
 	private String lastname;
 	private String email;
 	private String phone_number;
-	private String min_salary;
+	private String minSalary;
 	private String working_time;
-	private String degree_level;
+	private String degreeLevel;
 	private String specialization;
 	private String skill;
-	
+	private int score;
+
 
 	/*
 	 * Constructor
@@ -19,7 +20,6 @@ public class Applicant {
 	public Applicant() {
 		
 	}
-
 	
 	/*
 	 * Setters and Getters
@@ -65,13 +65,13 @@ public class Applicant {
 	}
 
 
-	public String getMin_salary() {
-		return min_salary;
+	public String getMinSalary() {
+		return minSalary;
 	}
 
 
-	public void setMin_salary(String min_salary) {
-		this.min_salary = min_salary;
+	public void setMinSalary(String minSalary) {
+		this.minSalary = minSalary;
 	}
 
 
@@ -85,13 +85,13 @@ public class Applicant {
 	}
 
 
-	public String getDegree_level() {
-		return degree_level;
+	public String getDegreeLevel() {
+		return degreeLevel;
 	}
 
 
-	public void setDegree_level(String degree_level) {
-		this.degree_level = degree_level;
+	public void setDegreeLevel(String degreeLevel) {
+		this.degreeLevel = degreeLevel;
 	}
 
 
@@ -112,6 +112,14 @@ public class Applicant {
 
 	public void setSkill(String skill) {
 		this.skill = skill;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
 	}
 	
 }
