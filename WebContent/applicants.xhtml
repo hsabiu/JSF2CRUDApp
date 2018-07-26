@@ -66,14 +66,13 @@
 
 			<p>
 				<!-- Button trigger modal -->
-				<button type="button" class="btn btn-secondary" data-toggle="modal"
+				<button type="button" class="btn btn-secondary btn-sm" data-toggle="modal"
 					data-target="#studentInfo">Subscribe</button>
 			</p>
+
 		</div>
 		
-		<!-- Modal -->
-		<div class="modal fade" id="studentInfo" tabindex="-1" role="dialog"
-			aria-labelledby="studentInfoLabel" aria-hidden="true">
+		<div class="modal fade" id="studentInfo" tabindex="-1" role="dialog" aria-labelledby="studentInfoLabel" aria-hidden="true">
 
 			<div class="modal-dialog" role="document">
 
@@ -82,9 +81,7 @@
 					<div class="modal-header">
 
 						<h5 class="modal-title" id="studentInfoLabel">Applicant Information</h5>
-						<button type="button" class="close" data-dismiss="modal"
-							aria-label="Close">
-							<span aria-hidden="true">×</span>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
 						</button>
 					</div>
 
@@ -93,8 +90,9 @@
 
 							<div class="form-row">
 								<div class="form-group col-md-6">
-									<h:outputLabel for="inputFirstName" value="First Name" /> 
-									<h:inputText class="form-control" id="inputFirstName" type="text" value="#{applicantinfo.firstName}" />
+									<h:outputLabel for="inputFirstName" value="First Name"/> <span class="required">*</span>
+									<h:inputText class="form-control" id="inputFirstName" type="text" value="#{applicantinfo.firstName}" required="true" requiredMessage="First name is required"/>
+								    <h:message for="inputFirstName" style="color:red"/>
 								</div>
 
 								<div class="form-group col-md-6">
@@ -122,8 +120,9 @@
 								
 								<div class="form-group col-md-6">
 									<h:outputLabel for="inputWorkingTime" value="Working Time" /> 
-									   <h:selectOneMenu class="form-control" id="inputWorkingTime" type="text" value="#{applicantinfo.workingTime}">
-									       <f:selectItem selected="selected" itemValue="Full-time" itemLabel="Full-time" />
+									<h:selectOneMenu class="form-control" id="inputWorkingTime" type="text" value="#{applicantinfo.workingTime}">
+									   	   <f:selectItem selected="selected" itemValue="" itemLabel="" />
+									       <f:selectItem itemValue="Full-time" itemLabel="Full-time" />
 									       <f:selectItem itemValue="Part-time" itemLabel="Part-time" />
 									       <f:selectItem itemValue="Both" itemLabel="Both" />
 									</h:selectOneMenu>
@@ -131,9 +130,25 @@
 														
 							</div>
 
-							<div class="form-group">
-								<h:outputLabel for="inputDegree" value="Academic Degree" /> 
-								<h:inputText class="form-control" id="inputDegree" type="text" value="#{applicantinfo.academicDegree}" />
+
+
+                            <div class="form-row">
+                            
+								<div class="form-group col-md-6">
+									<h:outputLabel for="inputEducationLevel" value="Education Level" /> 
+									<h:selectOneMenu class="form-control" id="inputEducationLevel" type="text" value="#{applicantinfo.educationLevel}">
+									   	   <f:selectItem selected="selected" itemValue="" itemLabel="" />
+									       <f:selectItem itemValue="Bachelor" itemLabel="Bachelors Degree" />
+									       <f:selectItem itemValue="Masters" itemLabel="Master Degree" />
+									       <f:selectItem itemValue="Doctoral" itemLabel="Doctoral Degree" />
+									</h:selectOneMenu>
+								</div>
+								
+								<div class="form-group col-md-6">
+									<h:outputLabel for="inputSpecialization" value="Specialization" /> 
+									<h:inputText class="form-control" id="inputSpecialization" type="text" value="#{applicantinfo.specialization}" />
+								</div>						
+														
 							</div>
 								
 							<div class="form-group">

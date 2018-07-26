@@ -62,15 +62,15 @@
 		</div>
 
 		<div class="list-group">
-			<ui:repeat var="employee" value="#{team.employeeList}">
+			<ui:repeat var="job" value="#{jobpostings.jobsList}">
 				<a href="#"
 					class="list-group-item list-group-item-action flex-column align-items-start">
 					<div class="d-flex w-100 justify-content-between">
-						<h5 class="mb-1">#{employee.title}</h5>
-						<small class="text-muted">3 days ago</small>
+						<h5 class="mb-1">#{job.jobTitle}</h5>
+						<small class="text-muted">Posted on #{job.timestamp}</small>
 					</div>
-					<p class="mb-1">#{employee.description}</p> <small
-					class="text-muted">#{employee.fullName}</small>
+					<p class="mb-1">#{job.jobDescription}</p> <small
+					class="text-muted">#{job.employer}</small>
 				</a>
 			</ui:repeat>
 		</div>

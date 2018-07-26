@@ -1,5 +1,9 @@
 package com.peopleware.jsf;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -15,24 +19,50 @@ public class NewApplicant {
 	private String contactNumber;
 	private String minimumSalary;
 	private String workingTime;
-	private String academicDegree;
+	private String educationLevel;
+	private String specialization;
 	private String technicalSkills;
-
-	public NewApplicant() {
-		
-	}
 	
 	public String addNewApplicant() {
 		
-		System.out.println(firstName);
-		System.out.println(lastName);
-		System.out.println(emailAddress);
-		System.out.println(contactNumber);
-		System.out.println(minimumSalary);
-		System.out.println(workingTime);
-		System.out.println(academicDegree);
-		System.out.println(technicalSkills);
+		DBManager db = new DBManager();
+		Connection conn = db.getConnection();
 		
+		try {
+			String query = "INSERT INTO candidates " 
+			             + "(firstname, lastname, email, phone_number, min_salary, working_time, education_level, specialization, skills) "
+					     + "values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			
+		    PreparedStatement stm = conn.prepareStatement(query);
+		    stm.setString(1, firstName);
+		    stm.setString(2, lastName);
+		    stm.setString(3, emailAddress);
+		    stm.setString(4, contactNumber);
+		    stm.setString(5, minimumSalary);
+		    stm.setString(6, workingTime);
+		    stm.setString(7, educationLevel);
+		    stm.setString(8, specialization);
+		    stm.setString(9, technicalSkills);
+		    
+		    stm.executeUpdate();
+		    stm.close();
+		    conn.close();
+		    
+			System.out.println("Update successful");
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+				
+		firstName = null;
+		lastName = null;
+		emailAddress = null;
+		contactNumber = null;
+		minimumSalary = null;
+		workingTime = null;
+		educationLevel = null;
+		specialization = null;
+		technicalSkills = null;
 		
 		return "applicants.xhtml?faces-redirect=true";
 	}
@@ -89,14 +119,22 @@ public class NewApplicant {
 		this.workingTime = workingTime;
 	}
 
-	public String getAcademicDegree() {
-		return academicDegree;
+	public String getEducationLevel() {
+		return educationLevel;
 	}
 
-	public void setAcademicDegree(String academicDegree) {
-		this.academicDegree = academicDegree;
+	public void setEducationLevel(String educationLevel) {
+		this.educationLevel = educationLevel;
 	}
 
+	public String getSpecialization() {
+		return specialization;
+	}
+
+	public void setSpecialization(String specialization) {
+		this.specialization = specialization;
+	}
+	
 	public String getTechnicalSkills() {
 		return technicalSkills;
 	}
