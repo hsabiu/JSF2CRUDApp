@@ -2,6 +2,8 @@ package com.peopleware.jsf;
 
 /**
  * A class representing the description of a job posting
+ * 
+ * @author habib
  */
 public class JobDescription {
 

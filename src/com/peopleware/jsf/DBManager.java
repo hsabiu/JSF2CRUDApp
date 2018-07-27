@@ -7,6 +7,8 @@ import java.sql.SQLException;
 
 /**
  * A class representing a connection to MySQL database
+ * 
+ * @author habib
  */
 public class DBManager {
 

@@ -5,15 +5,17 @@ package com.peopleware.jsf;
  * A class to represents all the information of a
  * applicant including contact information, education
  * working preferences and skills
+ * 
+ * @author habib
  */
 public class Applicant {
 	
-	private String firstname;
-	private String lastname;
+	private String firstName;
+	private String lastName;
 	private String email;
-	private String phone_number;
+	private String phoneNumber;
 	private String minSalary;
-	private String working_time;
+	private String workingTime;
 	private String degreeLevel;
 	private String specialization;
 	private String skill;
@@ -32,23 +34,23 @@ public class Applicant {
 	 * Setters and Getters
 	 */
 
-	public String getFirstname() {
-		return firstname;
+	public String getFirstName() {
+		return firstName;
 	}
 
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 
-	public String getLastname() {
-		return lastname;
+	public String getLastName() {
+		return lastName;
 	}
 
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 
@@ -62,13 +64,13 @@ public class Applicant {
 	}
 
 
-	public String getPhone_number() {
-		return phone_number;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
 
 
-	public void setPhone_number(String phone_number) {
-		this.phone_number = phone_number;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 
@@ -82,13 +84,13 @@ public class Applicant {
 	}
 
 
-	public String getWorking_time() {
-		return working_time;
+	public String getWorkingTime() {
+		return workingTime;
 	}
 
 
-	public void setWorking_time(String working_time) {
-		this.working_time = working_time;
+	public void setWorkingTime(String workingTime) {
+		this.workingTime = workingTime;
 	}
 
 

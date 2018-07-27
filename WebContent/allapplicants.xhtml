@@ -46,54 +46,36 @@
 
 	<div class="container">
 
-		<div class="header clearfix">
-			<nav>
-			<ul class="nav nav-pills float-right">
-				<li class="nav-item"><a class="nav-link active"
-					href="./index.xhtml">JOBS<span class="sr-only">(current)</span></a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="./employers.xhtml">EMPLOYERS</a></li>
-				<li class="nav-item"><a class="nav-link"
-					href="./subscribeapplicants.xhtml">APPLICANTS</a></li>
-			</ul>
-			</nav>
+		<p class="lead">All Subscribed Applicants</p>
 
-			<h3 class="display-5">PEOPLE-WARE</h3>
-		</div>
+		<h:dataTable class="table table-striped" var="applicant"
+			value="#{allapplicants.applicantList}">
 
-		<div class="list-group">
-			<h:dataTable var="job" value="#{joboffers.jobsList}"
-				varStatus="index">
+			<!--  Candidates record -->
 
-				<h:column>
-					<h:form>
-						<h:commandLink id="linkToRankBean" action="#{rankapplicants.rankApplicants(job)}" class="list-group-item list-group-item-action flex-column align-items-start">
-							<div class="d-flex w-100 justify-content-between">
-								<h5 class="mb-1">#{job.jobTitle}</h5>
-								<small class="text-muted">Posted on #{job.timestamp}</small>
-							</div>
-							<small class="text-muted">Employer Name: #{job.employer}</small>
-							<br/>
-							<small class="text-muted">Employer Contact No: #{job.contactNo}</small>
-							<br />
-							<br />
-							<p class="mb-1">#{job.jobDescription}</p>
-							<br />
-							<p class="mb-1">Requirements: #{job.requirements}</p>
-							<br />
-						</h:commandLink>
-					</h:form>
-				</h:column>
+			<h:column>
+				<f:facet name="header">First Name</f:facet>
+				<h:outputText value="#{applicant.firstName}" />
+			</h:column>
 
-			</h:dataTable>
-		</div>
+			<h:column>
+				<f:facet name="header">Last Name</f:facet>
+				<h:outputText value="#{applicant.lastName}" />
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Phone Number</f:facet>
+				<h:outputText value="#{applicant.phoneNumber}" />
+			</h:column>
+
+		</h:dataTable>
 
 		<footer class="footer">
 
 		<p>© PEOPLE-WARE 2018</p>
 		</footer>
+		
 	</div>
-	<!-- /container -->
 
 	<script src="./js/script.js"></script>
 </body>

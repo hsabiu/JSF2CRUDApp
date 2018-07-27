@@ -11,7 +11,7 @@ import javax.faces.bean.SessionScoped;
 /**
  * A class representing applicant information. This class is also responsible 
  * for inserting a new applicant record into the applicants table of the database 
- * when the newApplicant form is submitted within applicants.xhtml page
+ * when the newApplicant form is submitted within subscribeapplicants.xhtml page
  * 
  * @author habib
  *
@@ -35,10 +35,10 @@ public class NewApplicant {
 	/**
 	 * Add a new applicant to the database table of applicants. This function does
 	 * not take any argument. It is called on submitting the newApplicant form
-	 * inside applicants.xhtml
+	 * inside subscribeapplicants.xhtml
 	 * 
-	 * This method redirect back to the applicants.xhtml page after it has inserted 
-	 * the new applicant information into the database
+	 * This method redirect back to the subscribeapplicants.xhtml page after it has 
+	 * inserted the new applicant information into the database
 	 */
 	public String addNewApplicant() {
 		
@@ -74,7 +74,7 @@ public class NewApplicant {
 			e.printStackTrace();
 		}
 			
-		// Set variables to null before redirecting back to the applicants.xhtml
+		// Set variables to null before redirecting back to the subscribeapplicants.xhtml
 		// page to clear the data entered in the form fields
 		firstName = null;
 		lastName = null;
@@ -86,7 +86,7 @@ public class NewApplicant {
 		specialization = null;
 		technicalSkills = null;
 		
-		return "applicants.xhtml?faces-redirect=true";
+		return "subscribeapplicants.xhtml?faces-redirect=true";
 	}
 
 	

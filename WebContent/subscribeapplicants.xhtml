@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<meta name="description" content="" />
+
+<meta name="author" content="" />
+<link rel="icon" href="https://v4-alpha.getbootstrap.com/favicon.ico" />
+
+<title>People-Ware Recruiting</title>
+<!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/"> -->
+<!-- Bootstrap core CSS -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous" />
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous"></script>
+
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous"></script>
+<!-- Custom styles for this template -->
+<link href="./css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+	<div class="container">
+
+		<div class="header clearfix">
+			<nav>
+			<ul class="nav nav-pills float-right">
+				<li class="nav-item"><a class="nav-link" href="./index.xhtml">JOBS</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="./employers.xhtml">EMPLOYERS</a></li>
+				<li class="nav-item"><a class="nav-link active"
+					href="./subscribeapplicants.xhtml">APPLICANTS<span class="sr-only">(current)</span></a></li>
+			</ul>
+			</nav>
+
+			<h3 class="display-5">PEOPLE-WARE</h3>
+		</div>
+
+		<div class="jumbotron">
+
+			<h3 class="text-muted">FOR JOB SEEKERS</h3>
+
+			<p class="lead">If you are an applicant, please subscribes to the
+				services by clicking the button below.</p>
+
+			<p>
+				<button type="button" class="btn btn-secondary btn-sm"
+					data-toggle="modal" data-target="#studentInfo">Subscribe</button>
+			</p>
+
+		</div>
+
+		<div class="modal fade" id="studentInfo" tabindex="-1" role="dialog"
+			aria-labelledby="studentInfoLabel" aria-hidden="true">
+
+			<div class="modal-dialog" role="document">
+
+				<div class="modal-content">
+
+					<div class="modal-header">
+
+						<h5 class="modal-title" id="studentInfoLabel">Applicant
+							Information</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+
+					<div class="modal-body">
+
+						<h:messages style="color:red" for="newApplicant" />
+
+						<h:form id="newApplicant" enctype="multipart/form-data">
+
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<h:outputLabel for="inputFirstName" value="First Name" />
+									<span class="required">*</span>
+									<h:inputText class="form-control" id="inputFirstName"
+										type="text" value="#{applicantinfo.firstName}" required="true"
+										requiredMessage="First name is required" />
+									<h:message for="inputFirstName" style="color:red" />
+								</div>
+
+								<div class="form-group col-md-6">
+									<h:outputLabel for="inputLastName" value="Last Name" />
+									<span class="required">*</span>
+									<h:inputText class="form-control" id="inputLastName"
+										type="text" value="#{applicantinfo.lastName}" required="true"
+										requiredMessage="Last name is required" />
+									<h:message for="inputLastName" style="color:red" />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<h:outputLabel for="inputEmail" value="Email" />
+								<span class="required">*</span>
+								<h:inputText class="form-control" id="inputEmail" type="email"
+									value="#{applicantinfo.emailAddress}" required="true"
+									requiredMessage="Email is required" />
+								<h:message for="inputEmail" style="color:red" />
+							</div>
+
+							<div class="form-group">
+								<h:outputLabel for="inputPhoneNumber" value="Contact Number" />
+								<span class="required">*</span>
+								<h:inputText class="form-control"
+									data-format="+1 (ddd) ddd-dddd" id="inputPhoneNumber"
+									type="text" value="#{applicantinfo.contactNumber}"
+									required="true" requiredMessage="First name is required" />
+								<h:message for="inputPhoneNumber" style="color:red" />
+							</div>
+
+							<div class="form-row">
+
+								<div class="form-group col-md-6">
+									<h:outputLabel for="inputSalary" value="Minimum Salary" />
+									<span class="required">*</span>
+									<h:inputText class="form-control" id="inputSalary" type="text"
+										value="#{applicantinfo.minimumSalary}" required="true"
+										requiredMessage="Salary is required" />
+									<h:message for="inputSalary" style="color:red" />
+								</div>
+
+								<div class="form-group col-md-6">
+									<h:outputLabel for="inputWorkingTime" value="Working Time" />
+									<span class="required">*</span>
+									<h:selectOneMenu class="form-control" id="inputWorkingTime"
+										type="text" value="#{applicantinfo.workingTime}">
+										<f:selectItem selected="selected" itemValue="" itemLabel="" />
+										<f:selectItem itemValue="Full-time" itemLabel="Full-time" />
+										<f:selectItem itemValue="Part-time" itemLabel="Part-time" />
+										<f:selectItem itemValue="Both" itemLabel="Both" />
+									</h:selectOneMenu>
+									<h:message for="inputWorkingTime" style="color:red" />
+								</div>
+
+							</div>
+
+							<div class="form-row">
+
+								<div class="form-group col-md-6">
+									<h:outputLabel for="inputDegreeLevel" value="Degree Level" />
+									<span class="required">*</span>
+									<h:selectOneMenu class="form-control" id="inputDegreeLevel"
+										type="text" value="#{applicantinfo.degreeLevel}">
+										<f:selectItem selected="selected" itemValue="" itemLabel="" />
+										<f:selectItem itemValue="BSc" itemLabel="Bachelors Degree" />
+										<f:selectItem itemValue="MSc" itemLabel="Master Degree" />
+										<f:selectItem itemValue="PhD" itemLabel="Doctoral Degree" />
+									</h:selectOneMenu>
+									<h:message for="inputDegreeLevel" style="color:red" />
+								</div>
+
+								<div class="form-group col-md-6">
+									<h:outputLabel for="inputSpecialization" value="Specialization" />
+									<span class="required">*</span>
+									<h:inputText class="form-control" id="inputSpecialization"
+										type="text" value="#{applicantinfo.specialization}"
+										required="true" requiredMessage="Specialization is required" />
+									<h:message for="inputSpecialization" style="color:red" />
+								</div>
+
+							</div>
+
+							<div class="form-group">
+								<h:outputLabel for="inputSkills" value="Technical Skills" />
+								<span class="required">*</span>
+								<h:inputText class="form-control" id="inputSkills" type="text"
+									value="#{applicantinfo.technicalSkills}" />
+								<h:message for="inputSkills" style="color:red" />
+							</div>
+
+							<div class="btn-toolbar float-right">
+								<h:commandButton id="submit" value="Submit"
+									class="btn btn-primary"
+									action="#{applicantinfo.addNewApplicant}" />
+								&nbsp;&nbsp;&nbsp;
+								<h:commandButton id="cancel" value="Cancel"
+									class="btn btn-primary" action="applicants" />
+							</div>
+
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+		<p>© PEOPLE-WARE 2018</p>
+		</footer>
+	</div>
+	<!-- /container -->
+
+	<script src="./js/script.js"></script>
+</body>
+</html>

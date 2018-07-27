@@ -50,8 +50,10 @@
 			<nav>
 			<ul class="nav nav-pills float-right">
 				<li class="nav-item"><a class="nav-link" href="./index.xhtml">JOBS</a></li>
-				<li class="nav-item"><a class="nav-link active" href="./employers.xhtml">EMPLOYERS<span class="sr-only">(current)</span></a></li>
-				<li class="nav-item"><a class="nav-link" href="./applicants.xhtml">APPLICANTS</a></li>
+				<li class="nav-item"><a class="nav-link active"
+					href="./employers.xhtml">EMPLOYERS<span class="sr-only">(current)</span></a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="./subscribeapplicants.xhtml">APPLICANTS</a></li>
 			</ul>
 			</nav>
 
@@ -62,13 +64,20 @@
 
 			<h3 class="text-muted">FOR EMPLOYERS</h3>
 
-			<p class="lead">Please post job offers by clicking on the button below and proving the job profile description.</p>
+			<p class="lead">Please post job offers by clicking on the button
+				below and proving the job profile description.</p>
 
 			<p>
-				<button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#jobPost">Post Job</button>
+				<h:form>
+					<button type="button" class="btn btn-secondary btn-sm"
+						data-toggle="modal" data-target="#jobPost">Post Job</button>
+				&nbsp;&nbsp;&nbsp;
+		        <h:commandButton id="allApplicants" value="All Applicants"
+						class="btn btn-secondary btn-sm"
+						action="#{allapplicants.initializaAllApplicants}" />
+				</h:form>
 			</p>
 		</div>
-
 
 		<div class="modal fade" id="jobPost" tabindex="-1" role="dialog"
 			aria-labelledby="jobPostLabel" aria-hidden="true">
@@ -91,68 +100,88 @@
 
 							<div class="form-row">
 								<div class="form-group col-md-6">
-									<h:outputLabel for="inputEmployerName" value="Employer Name" /> <span class="required">*</span>
-									<h:inputText class="form-control" id="inputEmployerName" type="text" value="#{jobprofile.employer}" required="true" requiredMessage="Employer name is required" />
-<h:message for="inputEmployerName" style="color:red" />
+									<h:outputLabel for="inputEmployerName" value="Employer Name" />
+									<span class="required">*</span>
+									<h:inputText class="form-control" id="inputEmployerName"
+										type="text" value="#{jobprofile.employer}" required="true"
+										requiredMessage="Employer name is required" />
+									<h:message for="inputEmployerName" style="color:red" />
 
 								</div>
-								
+
 								<div class="form-group col-md-6">
-									<h:outputLabel for="inputPhoneNumber" value="Contact Number" /> <span class="required">*</span>
-									<h:inputText class="form-control" data-format="+1 (ddd) ddd-dddd" id="inputPhoneNumber" type="text" value="#{jobprofile.contactNo}" required="true" requiredMessage="Employer contact is required" />
-<h:message for="inputPhoneNumber" style="color:red" />
+									<h:outputLabel for="inputPhoneNumber" value="Contact Number" />
+									<span class="required">*</span>
+									<h:inputText class="form-control"
+										data-format="+1 (ddd) ddd-dddd" id="inputPhoneNumber"
+										type="text" value="#{jobprofile.contactNo}" required="true"
+										requiredMessage="Employer contact is required" />
+									<h:message for="inputPhoneNumber" style="color:red" />
 								</div>
 							</div>
 
 							<div class="form-group">
-								<h:outputLabel for="inputJobTitle" value="Job Title" /> <span class="required">*</span>
-								<h:inputText class="form-control" id="inputJobTitle" type="text" value="#{jobprofile.jobTitle}" required="true" requiredMessage="Job title is required" />
-<h:message for="inputJobTitle" style="color:red" />
+								<h:outputLabel for="inputJobTitle" value="Job Title" />
+								<span class="required">*</span>
+								<h:inputText class="form-control" id="inputJobTitle" type="text"
+									value="#{jobprofile.jobTitle}" required="true"
+									requiredMessage="Job title is required" />
+								<h:message for="inputJobTitle" style="color:red" />
 							</div>
 
 							<div class="form-group">
-								<h:outputLabel for="inputPhoneNumber" value="Job Description" /> 
-								<h:inputTextarea class="form-control" id="inputSalary" value="#{jobprofile.jobDescription}" />
+								<h:outputLabel for="inputPhoneNumber" value="Job Description" />
+								<h:inputTextarea class="form-control" id="inputSalary"
+									value="#{jobprofile.jobDescription}" />
 							</div>
- 
-                            <div class="form-row">
+
+							<div class="form-row">
 								<div class="form-group col-md-6">
-									<h:outputLabel for="inputSalaryRange" value="Salary Range ($)" /> <span class="required">*</span>
+									<h:outputLabel for="inputSalaryRange" value="Salary Range ($)" />
+									<span class="required">*</span>
 									<div class="form-row">
-									    <div class="form-group col-md-5">
-									    	<h:inputText class="form-control" id="inputStartSalary" type="text" value="#{jobprofile.salaryRange}" />
-									    </div>
-									    
-									    &nbsp;-&nbsp;
-									    
-									    <div class="form-group col-md-5">
-									    	<h:inputText class="form-control" id="inputEndSalary" type="text" value="#{jobprofile.salaryRange}" />
-									    </div>
+										<div class="form-group col-md-5">
+											<h:inputText class="form-control" id="inputStartSalary"
+												type="text" value="#{jobprofile.salaryRange}" />
+										</div>
+
+										&nbsp;-&nbsp;
+
+										<div class="form-group col-md-5">
+											<h:inputText class="form-control" id="inputEndSalary"
+												type="text" value="#{jobprofile.salaryRange}" />
+										</div>
 									</div>
 								</div>
-								
+
 								<div class="form-group col-md-6">
-									<h:outputLabel for="inputWorkingTime" value="Working Time" /> <span class="required">*</span>
-								    <h:selectOneMenu class="form-control" id="inputWorkingTime" type="text" value="#{jobprofile.workingTime}">
-								    	<f:selectItem selected="selected" itemValue="" itemLabel="" />
-								        <f:selectItem itemValue="Full-time" itemLabel="Full-time" />
-								        <f:selectItem itemValue="Part-time" itemLabel="Part-time" />
+									<h:outputLabel for="inputWorkingTime" value="Working Time" />
+									<span class="required">*</span>
+									<h:selectOneMenu class="form-control" id="inputWorkingTime"
+										type="text" value="#{jobprofile.workingTime}">
+										<f:selectItem selected="selected" itemValue="" itemLabel="" />
+										<f:selectItem itemValue="Full-time" itemLabel="Full-time" />
+										<f:selectItem itemValue="Part-time" itemLabel="Part-time" />
 									</h:selectOneMenu>
 								</div>
 							</div>
 
 
 							<div class="form-group">
-								<h:outputLabel for="inputSkills" value="Requirements" /> <span class="required">*</span>
-								<h:inputText class="form-control" id="inputSkills" type="text" value="#{jobprofile.workingTime}" />
+								<h:outputLabel for="inputSkills" value="Requirements" />
+								<span class="required">*</span>
+								<h:inputText class="form-control" id="inputSkills" type="text"
+									value="#{jobprofile.workingTime}" />
 							</div>
-							
+
 							<div class="btn-toolbar float-right">
-							    <h:commandButton id="submit" value="Submit" class="btn btn-primary" action="#{jobprofile.addNewJobPosting}" />
-							    &nbsp;&nbsp;&nbsp;
-								<h:commandButton id="cancel" value="Cancel" class="btn btn-primary" action="employers" />
+								<h:commandButton id="submit" value="Submit"
+									class="btn btn-primary" action="#{jobprofile.addNewJobPosting}" />
+								&nbsp;&nbsp;&nbsp;
+								<h:commandButton id="cancel" value="Cancel"
+									class="btn btn-primary" action="employers" />
 							</div>
-										
+
 						</h:form>
 					</div>
 				</div>

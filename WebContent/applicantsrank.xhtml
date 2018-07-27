@@ -49,7 +49,7 @@
 		<p class="lead">Qualified Applicants</p>
 
 		<h:dataTable class="table table-striped" var="applicant"
-			value="#{joboffers.rankedApplicantsList}">
+			value="#{rankapplicants.applicantList}">
 
 			<!--  Candidates record -->
 			<h:column>
@@ -59,12 +59,12 @@
 
 			<h:column>
 				<f:facet name="header">First Name</f:facet>
-				<h:outputText value="#{applicant.firstname}" />
+				<h:outputText value="#{applicant.firstName}" />
 			</h:column>
 
 			<h:column>
 				<f:facet name="header">Last Name</f:facet>
-				<h:outputText value="#{applicant.lastname}" />
+				<h:outputText value="#{applicant.lastName}" />
 			</h:column>
 
 			<h:column>
@@ -78,8 +78,8 @@
 
 		<p>© PEOPLE-WARE 2018</p>
 		</footer>
+		
 	</div>
-	<!-- /container -->
 
 	<script src="./js/script.js"></script>
 </body>
