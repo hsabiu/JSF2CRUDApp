@@ -2,16 +2,18 @@ Authour: Habib Sabiu
 Date: July 26, 2017
 
 IMPLEMENTATION:
-=================================================================================================
+======================================================================================================
 This directory contains a JavaEE project implemented using JSF2 and Bootstrap v4. The project was
 developed using the eclipse IDE and tested on GlassFish 5.0 server. In addition, the project uses
 a MySQL database for data storage.
 
 
 DEPLOYMENT:
-=================================================================================================
+======================================================================================================
 To test this project, you most have a runtime server such as GlassFish, Tomcat etc. installed. 
-In addition, you most have a MySQL server running.
+In addition, you most have a MySQL server running. This document is a bit long, so if you already
+have all the systems setup, you can skip to section 4 (Testing the application) which provide the
+information about the various functionalities of the system.
 
 1. Importing the project into eclipse
 The first step to testing this project is to import the entire project directory into eclispse 
@@ -75,5 +77,58 @@ data. For example, in MySQL Workbench, you can use the steps below:
       Run As -> Run on Server (you may have to select your runtime here). This should open the index 
       file of the webpage inside a browser.
 
-          - The index.xhtml file 
+          - The index.xhtml file shows a list of all job offers together with information such as job
+            title, posted date, employer name and contact number, job description, and requirements.
+            This data is read from the jobposts table of the peopleware database. At the top of the 
+            index page is a navigatation that would take you to the "EMPLOYERS" and "APPLICANTS" pages.
 
+            When you click on any of the job offers, you would be taken to a page that provides a 
+            table with a list of all the applicants that qualified for this job offer. This list is 
+            ranked based on the criteria defined in the project specification document. The most qualified 
+            candidate is the first in the list with a rank of 1. If there is no any candidate that 
+            qualifies for this job offer, the table would be empty.
+
+          - On the "EMPLOYERS", you have two options, "Post Job" or "All Applicants". The "Post Job"
+            button would give a form in which you can provide the information about the job offer such
+            employer name and contact number. On submitting this form, the data would be stored in the 
+            "jobposts" table of the "peopleware" database.
+
+            The "All Applicants" button would take you to a page listing the basic information of all the 
+            candidates currently subscribed to the system (in the order they appear in the database). 
+
+          - The last part of the system is the "APPLICANTS" tab, which give an option for applicants to
+            subscrib to the system by giving their information including name, email, contact number etc.
+            This can be done by clicking the "Subscribe" button and entering the information in the provided
+            form. On submitting this form, the data entered would be stored in the "applicants" table of the
+            "peopleware" database.
+
+
+FINAL NOTES:
+======================================================================================================
+All the required functionalities of this project has been implemented as per the specification document 
+provided. In addition the following addition (optional) features has been implemented:
+
+    - Posting new job offers
+    - listing all applicants
+
+
+FILES INCLUDED:
+======================================================================================================
+1. Class diagram - The image file called ClassDiagram.png contains the class diagram of the system.
+2. Source code - The people-ware directory contains all the files from this project
+3. Installation notes - This is the README.txt file
+4. Script - The peopleware.sql file located inside the people-ware/db/ contain the sql statements that 
+            could be used to preload data into the database
+   
+
+FEATURES NOT IMPLEMENTED
+======================================================================================================
+All the mandatory features of the system has been implemented. However, there are few functionalities
+that are not implemented such as form validation. Since these features are not explicitly requested in 
+the project specification, I classify them as low priority and decided to implement them in the last 
+phase of the project. Unfortunately, I was not able to implement these features before the deadline.
+
+Furthermore, when posting a job, you can only select one academic degree requirements at this time. For
+the technical skills field, the data can be entered in the format:
+
+    "Skill_1":Experience_Level_1,"Skill_2":Experience_Level_2  eg. “Java”:5,“Bootstrap”:2
