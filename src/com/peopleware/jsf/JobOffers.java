@@ -39,6 +39,10 @@ public class JobOffers implements Serializable {
 		
 	}
 
+	/**
+	 * Method to initialize the various properties of all job postings for
+	 * displaying on the index.xhtml page
+	 */
 	public void initializeAllJobOffers() {
 
 		try {

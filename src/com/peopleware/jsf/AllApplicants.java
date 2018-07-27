@@ -11,6 +11,13 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+/**
+ * Class to retrieve the data for all applicants from the database and initialize 
+ * a list of applicants for displaying on the allapplicants.xhtml page
+ * 
+ * @author habib
+ *
+ */
 @SessionScoped
 @SuppressWarnings("deprecation")
 @ManagedBean(name = "allapplicants", eager = true)
@@ -26,8 +33,12 @@ public class AllApplicants {
 	}
 
 	/**
+	 * Get the data for all applicants from the database and initialize their information 
+	 * for displaying on the allapplicants.xhtml page. This method is called on clicking
+	 * the allApplicants button inside the employers.xhtml page. 
 	 * 
-	 * @return
+	 * @return After successful execution, this method redirect back to the 
+	 *         allapplicants.xhtml page for displaying the applicants list
 	 */
 	public String initializaAllApplicants() {
 
@@ -72,6 +83,7 @@ public class AllApplicants {
 			e.printStackTrace();
 		}
 
+		// Redirect back to the allapplicants.xhtml page for displaying the applicants list
 		return "allapplicants.xhtml?faces-redirect=true";
 	}
 
