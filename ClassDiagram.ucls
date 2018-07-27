@@ -3,7 +3,7 @@
   realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="com.peopleware.jsf.NewApplicant" project="people-ware" 
     file="/people-ware/src/com/peopleware/jsf/NewApplicant.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="114" y="259"/>    
+    <position height="-1" width="-1" x="114" y="275"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="com.peopleware.jsf.RankApplicants" project="people-ware" 
     file="/people-ware/src/com/peopleware/jsf/RankApplicants.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1081" y="21"/>    
+    <position height="-1" width="-1" x="1082" y="36"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="com.peopleware.jsf.JobOffers" project="people-ware" 
     file="/people-ware/src/com/peopleware/jsf/JobOffers.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="579" y="34"/>    
+    <position height="-1" width="-1" x="578" y="45"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="com.peopleware.jsf.DBManager" project="people-ware" 
     file="/people-ware/src/com/peopleware/jsf/DBManager.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="822" y="19"/>    
+    <position height="-1" width="-1" x="823" y="27"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="com.peopleware.jsf.NewJob" project="people-ware" 
     file="/people-ware/src/com/peopleware/jsf/NewJob.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="339" y="207"/>    
+    <position height="-1" width="-1" x="338" y="220"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="com.peopleware.jsf.AllApplicants" project="people-ware" 
     file="/people-ware/src/com/peopleware/jsf/AllApplicants.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1442" y="22"/>    
+    <position height="-1" width="-1" x="1443" y="33"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -74,25 +74,37 @@
     </display>  
   </class>  
   <association id="9">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="10" name="applicantList"/>      
-      <multiplicity id="11" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="12">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="13" name="jobsList"/>      
-      <multiplicity id="14" minimum="0" maximum="2147483647"/>    
+      <attribute id="10" name="jobsList">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="11" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="15">    
+  <association id="12">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="16" name="applicantList"/>      
-      <multiplicity id="17" minimum="0" maximum="2147483647"/>    
+      <attribute id="13" name="applicantList">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="14" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="15">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="16" name="applicantList">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="17" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
