@@ -8,6 +8,15 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 
+/**
+ * A class representing applicant information. This class is also responsible 
+ * for inserting a new applicant record into the applicants table of the database 
+ * when the newApplicant form is submitted within applicants.xhtml page
+ * 
+ * @author habib
+ *
+ */
+
 @SessionScoped
 @ManagedBean(name="applicantinfo", eager=true)
 @SuppressWarnings("deprecation")
@@ -23,16 +32,27 @@ public class NewApplicant {
 	private String specialization;
 	private String technicalSkills;
 	
+	/**
+	 * Add a new applicant to the database table of applicants. This function does
+	 * not take any argument. It is called on submitting the newApplicant form
+	 * inside applicants.xhtml
+	 * 
+	 * This method redirect back to the applicants.xhtml page after it has inserted 
+	 * the new applicant information into the database
+	 */
 	public String addNewApplicant() {
 		
+		// Create a database manager and get the connection
 		DBManager db = new DBManager();
 		Connection conn = db.getConnection();
 		
 		try {
+			// Insertion SQL query
 			String query = "INSERT INTO applicants " 
 			             + "(firstname, lastname, email, phone_number, min_salary, working_time, degree_level, specialization, skills) "
 					     + "values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			
+			// Preparing the statement and executing the query
 		    PreparedStatement stm = conn.prepareStatement(query);
 		    stm.setString(1, firstName);
 		    stm.setString(2, lastName);
@@ -45,15 +65,17 @@ public class NewApplicant {
 		    stm.setString(9, technicalSkills);
 		    
 		    stm.executeUpdate();
+		    
+			// Close the connection after successful data insertion
 		    stm.close();
 		    conn.close();
-		    
-			System.out.println("Update successful");
-			
+		    			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-				
+			
+		// Set variables to null before redirecting back to the applicants.xhtml
+		// page to clear the data entered in the form fields
 		firstName = null;
 		lastName = null;
 		emailAddress = null;

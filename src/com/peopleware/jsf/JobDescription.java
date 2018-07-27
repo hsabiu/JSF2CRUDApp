@@ -1,6 +1,8 @@
 package com.peopleware.jsf;
 
-
+/**
+ * A class representing the description of a job posting
+ */
 public class JobDescription {
 
 	private String employer;
@@ -11,11 +13,10 @@ public class JobDescription {
 	private String workingTime;
 	private String requirements;
 	private String timestamp;
-	
+
 	/*
 	 * Setters and Getters
 	 */
-	
 
 	public String getEmployer() {
 		return employer;
@@ -72,7 +73,7 @@ public class JobDescription {
 	public void setRequirements(String requirements) {
 		this.requirements = requirements;
 	}
-	
+
 	public String getTimestamp() {
 		return timestamp;
 	}
@@ -80,5 +81,5 @@ public class JobDescription {
 	public void setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
 	}
-	
+
 }

@@ -1,5 +1,11 @@
 package com.peopleware.jsf;
 
+
+/**
+ * A class to represents all the information of a
+ * applicant including contact information, education
+ * working preferences and skills
+ */
 public class Applicant {
 	
 	private String firstname;
