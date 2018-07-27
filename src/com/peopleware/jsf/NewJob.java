@@ -24,9 +24,12 @@ public class NewJob {
 	private String contactNo;
 	private String jobTitle;
 	private String jobDescription;
-	private String salaryRange;
+	private String startSalary;
+	private String endSalary;
 	private String workingTime;
-	private String requirements;
+	private String degreeLevel;
+	private String specialization;
+	private String technicalSkills;;
 
 	/*
 	 * Constructor
@@ -52,8 +55,8 @@ public class NewJob {
 		try {
 			// Insertion SQL query
 			String query = "INSERT INTO jobposts "
-					+ "(employer_name, contact_number, job_title, job_description, salary_range, working_time, skills) "
-					+ "values (?, ?, ?, ?, ?, ?, ?)";
+					+ "(employer_name, contact_number, job_title, job_description, salary_range, working_time, skills, degree) "
+					+ "values (?, ?, ?, ?, ?, ?, ?, ?)";
 
 			// Prepare the statement and execute the query
 			PreparedStatement stm = conn.prepareStatement(query);
@@ -61,9 +64,10 @@ public class NewJob {
 			stm.setString(2, contactNo);
 			stm.setString(3, jobTitle);
 			stm.setString(4, jobDescription);
-			stm.setString(5, salaryRange);
+			stm.setString(5, startSalary + " - " + endSalary);
 			stm.setString(6, workingTime);
-			stm.setString(7, requirements);
+			stm.setString(7, technicalSkills);
+			stm.setString(8, degreeLevel + " in " + specialization);
 
 			stm.executeUpdate();
 
@@ -81,9 +85,12 @@ public class NewJob {
 		contactNo = null;
 		jobTitle = null;
 		jobDescription = null;
-		salaryRange = null;
+		startSalary = null;
+		endSalary = null;
 		workingTime = null;
-		requirements = null;
+		degreeLevel = null;
+		specialization = null;
+		technicalSkills = null;
 
 		// Redirect back to the employers.xhtml page
 		return "employers.xhtml?faces-redirect=true";
@@ -123,13 +130,21 @@ public class NewJob {
 	public void setJobDescription(String jobDescription) {
 		this.jobDescription = jobDescription;
 	}
-
-	public String getSalaryRange() {
-		return salaryRange;
+	
+	public String getStartSalary() {
+		return startSalary;
 	}
 
-	public void setSalaryRange(String salaryRange) {
-		this.salaryRange = salaryRange;
+	public void setStartSalary(String startSalary) {
+		this.startSalary = startSalary;
+	}
+
+	public String getEndSalary() {
+		return endSalary;
+	}
+
+	public void setEndSalary(String endSalary) {
+		this.endSalary = endSalary;
 	}
 
 	public String getWorkingTime() {
@@ -140,12 +155,28 @@ public class NewJob {
 		this.workingTime = workingTime;
 	}
 
-	public String getRequirements() {
-		return requirements;
+	public String getDegreeLevel() {
+		return degreeLevel;
 	}
 
-	public void setRequirements(String requirements) {
-		this.requirements = requirements;
+	public void setDegreeLevel(String degreeLevel) {
+		this.degreeLevel = degreeLevel;
+	}
+
+	public String getSpecialization() {
+		return specialization;
+	}
+
+	public void setSpecialization(String specialization) {
+		this.specialization = specialization;
+	}
+
+	public String getTechnicalSkills() {
+		return technicalSkills;
+	}
+
+	public void setTechnicalSkills(String technicalSkills) {
+		this.technicalSkills = technicalSkills;
 	}
 
 }

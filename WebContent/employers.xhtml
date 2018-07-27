@@ -129,13 +129,13 @@
                                     <span class="required">*</span>
                                     <div class="form-row">
                                         <div class="form-group col-md-5">
-                                            <h:inputText class="form-control" id="inputStartSalary" type="text" value="#{jobprofile.salaryRange}" />
+                                            <h:inputText class="form-control" id="inputStartSalary" type="text" value="#{jobprofile.startSalary}" />
                                         </div>
 
                                         &nbsp;-&nbsp;
 
                                         <div class="form-group col-md-5">
-                                            <h:inputText class="form-control" id="inputEndSalary" type="text" value="#{jobprofile.salaryRange}" />
+                                            <h:inputText class="form-control" id="inputEndSalary" type="text" value="#{jobprofile.endSalary}" />
                                         </div>
                                     </div>
                                 </div>
@@ -151,13 +151,38 @@
                                 </div>
                             </div>
 
+                            <div class="form-row">
 
-                            <div class="form-group">
-                                <h:outputLabel for="inputSkills" value="Requirements" />
-                                <span class="required">*</span>
-                                <h:inputText class="form-control" id="inputSkills" type="text" value="#{jobprofile.workingTime}" />
+                                <div class="form-group col-md-6">
+                                    <h:outputLabel for="inputDegreeLevel" value="Degree Level" />
+                                    <span class="required">*</span>
+                                    <h:selectOneMenu class="form-control" id="inputDegreeLevel" type="text" value="#{jobprofile.degreeLevel}">
+                                        <f:selectItem selected="selected" itemValue="" itemLabel="" />
+                                        <f:selectItem itemValue="BSc" itemLabel="Bachelors Degree" />
+                                        <f:selectItem itemValue="MSc" itemLabel="Master Degree" />
+                                        <f:selectItem itemValue="PhD" itemLabel="Doctoral Degree" />
+                                    </h:selectOneMenu>
+                                    <h:message for="inputDegreeLevel" style="color:red" />
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <h:outputLabel for="inputSpecialization" value="Specialization" />
+                                    <span class="required">*</span>
+                                    <h:inputText class="form-control" id="inputSpecialization" type="text" value="#{jobprofile.specialization}" required="true"
+                                        requiredMessage="Specialization is required" />
+                                    <h:message for="inputSpecialization" style="color:red" />
+                                </div>
+
                             </div>
 
+                            <div class="form-group">
+                                <h:outputLabel for="inputSkills" value="Technical Skills" />
+                                <span class="required">*</span>
+                                <h:inputText class="form-control" id="inputSkills" type="text" value="#{jobprofile.technicalSkills}" />
+                                <h:message for="inputSkills" style="color:red" />
+                            </div>
+                            
+                            
                             <div class="btn-toolbar float-right">
                                 <h:commandButton id="submit" value="Submit" class="btn btn-primary" action="#{jobprofile.addNewJobPosting}" /> &nbsp;&nbsp;&nbsp;
                                 <h:commandButton id="cancel" value="Cancel" class="btn btn-primary" action="employers" />
