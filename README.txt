@@ -43,7 +43,37 @@ a new Server.
     - You should see the server you just installed in the "Servers". If it is not running, right
       click on the server and choose restart.
       
-3. Setting up MySQL and importing the data
+3. Importing the test data into MySQL
+This step assume you have a MySQL database installed and running on your system. I have included
+a database dump file called peopleware.sql located inside people-ware/db/ containing a record of 
+the tables structure and the data from the database I used for testing this progect in the form 
+of a list of SQL statements.
+
+To import the data into MySQL, you can use the commanline by following the step below.
+
+    - Open terminal and navigate to people-ware/db/ directory
+    - Type the command: mysql -u username -p peopleware < peopleware.sql
+
+Alternatively, you can use a GUI application such as MySQL Workbench or Sequel Pro to import the 
+data. For example, in MySQL Workbench, you can use the steps below:
+
+    - File -> Open SQL Script... -> Select the peopleware.sql from your file system -> run the script
 
 4. Testing the application
+
+    - This project has the following directory structure:
+      people-ware/ - This is the root directory of the project
+      people-ware/WebContent/ - This directory contain all the HTML, CSS and JavaScript code 
+      people-ware/src/com/peopleware/jsf - This directory contain all the .java files
+
+    - To run the application, please ensure that your server is running, and you have the database
+      loaded into MySQL. You may also have to change the database connection url inside DBManager class
+      located in people-ware/src/com/peopleware/jsf. You should provide the correct url to your MySQL
+      server and also the correct login credentials (user name and password).
+
+    - If everything is setup correctly, right click on people-ware/WebContent/index.xhtml and select
+      Run As -> Run on Server (you may have to select your runtime here). This should open the index 
+      file of the webpage inside a browser.
+
+          - The index.xhtml file 
 
