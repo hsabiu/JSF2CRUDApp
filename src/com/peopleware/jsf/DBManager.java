@@ -16,7 +16,7 @@ public class DBManager {
 
 	}
 
-	/*
+	/**
 	 * A utility method to connect to MySQL database
 	 */
 	public Connection getConnection() {

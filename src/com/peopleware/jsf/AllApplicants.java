@@ -25,21 +25,28 @@ public class AllApplicants {
 		
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String initializaAllApplicants() {
 
 		applicantList = new ArrayList<Applicant>();
 
 		try {
 
+			// Create a database manager and get the connection
 			DBManager db = new DBManager();
 			Connection conn = db.getConnection();
 
+			// Selection SQL query to retrieve the data from the database
 			String query = "SELECT * FROM applicants ORDER BY id";
 
-			PreparedStatement ps = conn.prepareStatement(query, ResultSet.TYPE_FORWARD_ONLY,
-					ResultSet.CONCUR_READ_ONLY);
+			// Prepare the statement and execute the query
+			PreparedStatement ps = conn.prepareStatement(query, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
 			ResultSet rs = ps.executeQuery();
 
+			// Process each of the rows returned by the SQL query
 			while (rs.next()) {
 
 				Applicant applicant = new Applicant();
@@ -58,7 +65,7 @@ public class AllApplicants {
 				applicantList.add(applicant);
 
 			}
-
+			// Close the connection after successful data insertion
 			conn.close();
 
 		} catch (SQLException e) {

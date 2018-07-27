@@ -16,7 +16,6 @@ import javax.faces.bean.SessionScoped;
  * @author habib
  *
  */
-
 @SessionScoped
 @ManagedBean(name="applicantinfo", eager=true)
 @SuppressWarnings("deprecation")
@@ -37,8 +36,8 @@ public class NewApplicant {
 	 * not take any argument. It is called on submitting the newApplicant form
 	 * inside subscribeapplicants.xhtml
 	 * 
-	 * This method redirect back to the subscribeapplicants.xhtml page after it has 
-	 * inserted the new applicant information into the database
+	 * @return After successfully inserting the new applicant information into the database, 
+	 * this method redirect back to the subscribeapplicants.xhtml page
 	 */
 	public String addNewApplicant() {
 		
@@ -52,7 +51,7 @@ public class NewApplicant {
 			             + "(firstname, lastname, email, phone_number, min_salary, working_time, degree_level, specialization, skills) "
 					     + "values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			
-			// Preparing the statement and executing the query
+			// Prepare the statement and execute the query
 		    PreparedStatement stm = conn.prepareStatement(query);
 		    stm.setString(1, firstName);
 		    stm.setString(2, lastName);
@@ -86,6 +85,7 @@ public class NewApplicant {
 		specialization = null;
 		technicalSkills = null;
 		
+		// Redirect back to the subscribeapplicants.xhtml page
 		return "subscribeapplicants.xhtml?faces-redirect=true";
 	}
 

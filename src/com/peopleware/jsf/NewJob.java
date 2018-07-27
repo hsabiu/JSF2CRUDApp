@@ -40,10 +40,9 @@ public class NewJob {
 	 * not take any argument. It is called on submitting the newJobProfile form
 	 * inside employers.xhtml
 	 * 
-	 * This method redirect back to the employers.xhtml page after it has inserted
-	 * the new job profile data into the database
+	 * @return After successfully inserting the new job profile data into the database, 
+	 * this method redirect back to the employers.xhtml page
 	 */
-
 	public String addNewJobPosting() {
 
 		// Create a database manager and get the connection
@@ -56,7 +55,7 @@ public class NewJob {
 					+ "(employer_name, contact_number, job_title, job_description, salary_range, working_time, skills) "
 					+ "values (?, ?, ?, ?, ?, ?, ?)";
 
-			// Preparing the statement and executing the query
+			// Prepare the statement and execute the query
 			PreparedStatement stm = conn.prepareStatement(query);
 			stm.setString(1, employer);
 			stm.setString(2, contactNo);
@@ -86,6 +85,7 @@ public class NewJob {
 		workingTime = null;
 		requirements = null;
 
+		// Redirect back to the employers.xhtml page
 		return "employers.xhtml?faces-redirect=true";
 	}
 
