@@ -2,22 +2,23 @@ Author: Habib Sabiu
 Date: July 27, 2018
 
 IMPLEMENTATION:
-======================================================================================================
+====================================================================================================
 This directory contains a JavaEE project implemented using JSF2 and Bootstrap v4. The project was
 developed using the eclipse IDE and tested on GlassFish 5.0 server. In addition, the project uses
 a MySQL database for data storage.
 
 
 DEPLOYMENT:
-======================================================================================================
+====================================================================================================
 To test this project, you most have a runtime server such as GlassFish, Tomcat etc. installed. 
 In addition, you most have a MySQL server running. 
 
-This document is long, so if you already have all the systems setup, you can skip to Section 4 (Testing 
-the application), which provide the information about the various functionalities of the system.
+This document is long, so if you already have all the systems setup, you can skip to Section 4, 
+which provide the information about the various functionalities implemented.
 
 
 1. Importing the project into eclipse IDE
+
 The first step to testing this project is to import the entire project directory into eclipse 
 workspace. This can be done using the following steps.
 
@@ -28,11 +29,12 @@ workspace. This can be done using the following steps.
 NOTE: If you get an error after importing the project into eclipse, it is probably because you
 have a different runtime server installed. To fix this, right click on the project directory and
 select Properties. In the search area, search for "Project Facets" and click. On the right side,
-select the "Runtimes" tab and change to the runtime you have in your eclipse installation. Hopefully 
-this should fix the error.
+select the "Runtimes" tab and change to the runtime you have in your eclipse installation. 
+Hopefully this should fix the error.
 
 
 2. Setting up the runtime
+
 If you don't have any server configured in your eclipse installation, follow the steps below to add 
 a new Server.
 
@@ -50,6 +52,7 @@ a new Server.
       
 
 3. Importing the test data into MySQL
+
 This step assume you have a MySQL database installed and running on your system. I have included
 a database dump file called peopleware.sql containing a record of the tables structure and the data 
 from the database I used for testing this progect in the form of a list of SQL statements.
@@ -62,7 +65,7 @@ To import the data into MySQL, you can use the comman line by following the step
 Alternatively, you can use a GUI application such as MySQL Workbench or Sequel Pro to import the 
 data. For example, in MySQL Workbench, you can use the steps below:
 
-    - File -> Open SQL Script... -> Select the peopleware.sql from your filesystem -> and run the script
+    - File -> Open SQL Script -> Select the peopleware.sql from your filesystem -> and run the script
 
 
 4. Testing the application
@@ -108,16 +111,16 @@ data. For example, in MySQL Workbench, you can use the steps below:
 
 
 FINAL NOTES:
-======================================================================================================
-All the required features of this project has been implemented as per the specification document provided. 
-In addition, the following optional features has been implemented:
+====================================================================================================
+All the required features of this project has been implemented as per the specification document 
+provided. In addition, the following optional features has been implemented:
 
     - Posting new job offers
     - Listing all applicants
 
 
 FILES INCLUDED:
-======================================================================================================
+====================================================================================================
 1. Class diagram - The image file called ClassDiagram.png contains the class diagram of the system.
 2. Source code - The people-ware directory contains all the files of this project
 3. Installation notes - This is the README.txt file
@@ -126,11 +129,11 @@ FILES INCLUDED:
    
 
 FEATURES NOT IMPLEMENTED
-======================================================================================================
-All the mandatory features of the system has been implemented. However, there are few functionalities
-that are not implemented such as form validation. Since these features are not explicitly requested in 
-the project specification, I classify them as low priority and decided to implement them at the last 
-phase of the project. Unfortunately, I was not able to implement these features before the deadline.
+====================================================================================================
+All mandatory features of the system has been implemented. However, there are few functionalities
+that are not implemented such as form validation. Since these features are not explicitly requested 
+in the project specification, I classify them as low priority and decided to implement them at the 
+last phase of the project. Unfortunately, I was not able to implement these features.
 
 Furthermore, when posting a job, you can only select one academic degree requirement at this time. 
 For the technical skills field, the data can be entered in the following format:
