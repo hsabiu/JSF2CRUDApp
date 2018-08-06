@@ -1,8 +1,4 @@
-Author: Habib Sabiu
-Date: July 27, 2018
-
 # Implementation:
-
 This directory contains a JavaEE project implemented using JSF2 and Bootstrap v4. The project was developed using the eclipse IDE and tested on GlassFish 5.0 server. In addition, the project uses a MySQL database for data storage.
 
 # Deployment:
@@ -43,7 +39,7 @@ Alternatively, you can use a GUI application such as MySQL Workbench or Sequel P
      File -> Open SQL Script -> Select the peopleware.sql from your filesystem -> and run the script
 
 
-## Testing the application
+## Running the application
 * his project has the following directory structure:
 
       people-ware/ - This is the root directory of the project
@@ -54,15 +50,15 @@ Alternatively, you can use a GUI application such as MySQL Workbench or Sequel P
 
 * If everything is setup correctly, right click on people-ware/WebContent/index.xhtml and select Run As -> Run on Server (you may have to select your runtime here). This should open the index file of the webpage inside a browser.
 
-..* The index.xhtml file shows a list of all job offers together with information such as job title, posted date, employer name and contact number, job description, and requirements. This data is read from the "jobposts" table of the "peopleware" database. At the top of the index page is a navigatation that would take you to the "EMPLOYERS" and "APPLICANTS" pages.
+  * The index.xhtml file shows a list of all job offers together with information such as job title, posted date, employer name and contact number, job description, and requirements. This data is read from the "jobposts" table of the "peopleware" database. At the top of the index page is a navigatation that would take you to the "EMPLOYERS" and "APPLICANTS" pages.
 
-When you click on any of the job offers, you would be taken to a page that provides a table with a list of all the applicants that qualified for this job offer. This list is ranked based on the criteria defined in the project specification document. The most qualified candidate is the first on the table, with a rank of 1. If there is no any candidate that qualifies for this job offer, the table would be empty.
+  When you click on any of the job offers, you would be taken to a page that provides a table with a list of all the applicants that qualified for this job offer. This list is ranked based on the criteria defined in the project specification document. The most qualified candidate is the first on the table, with a rank of 1. If there is no any candidate that qualifies for this job offer, the table would be empty.
 
-..* On the "EMPLOYERS" page, you have two options, "Post Job" or "All Applicants". The "Post Job" button would provide a form in which you can enter the information about the job offer such employer name and contact number. On submitting this form, the data would be stored in the "jobposts" table of the "peopleware" database.
+  * On the "EMPLOYERS" page, you have two options, "Post Job" or "All Applicants". The "Post Job" button would provide a form in which you can enter the information about the job offer such employer name and contact number. On submitting this form, the data would be stored in the "jobposts" table of the "peopleware" database.
 
-The "All Applicants" button would take you to a page listing the basic information of all the candidates currently subscribed to the system (in the order they appear in the database). 
+  The "All Applicants" button would take you to a page listing the basic information of all the candidates currently subscribed to the system (in the order they appear in the database). 
 
-..* The last part of the system is the "APPLICANTS" tab, which give an option for the applicants to subscribe to the system by entering their information including name, email, contact number etc. This can be done by clicking the "Subscribe" button and entering the information in the provided form. On submitting this form, the data entered would be stored in the "applicants" table of the "peopleware" database.
+  * The last part of the system is the "APPLICANTS" tab, which give an option for the applicants to subscribe to the system by entering their information including name, email, contact number etc. This can be done by clicking the "Subscribe" button and entering the information in the provided form. On submitting this form, the data entered would be stored in the "applicants" table of the "peopleware" database.
 
 # Final notes:
 All the required features of this project has been implemented as per the specification document 
